@@ -1,0 +1,8 @@
+# Activate the rewrite module.
+RewriteEngine On
+# Ensure the requested URL is not a file.
+RewriteCond %{REQUEST_FILENAME} !-f
+# Ensure the requested URL is not a directory.
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?__route=$1 [L,QSA]
